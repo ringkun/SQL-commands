@@ -1,0 +1,43 @@
+
+CREATE TABLE comp_uni(
+    name VARCHAR(100) PRIMARY KEY,
+    dateEstablished DATE NOT NULL,
+    address VARCHAR(100) NOT NULL,
+    studentPopulation INTEGER NOT NULL,
+    acceptenceRate Float NOT NULL
+    
+);
+
+
+INSERT INTO comp_uni(
+    “CU Boulder”,
+    1876,
+    “1100 28th St Boulder CO 80303”,
+    35000,
+    .80 
+);
+
+
+SELECT name, major FROM football_players
+    ORDER BY major;
+
+SELECT name, rushing_yards FROM football_players
+    WHERE rushing_yards > 70;
+
+SELECT * FROM football_games
+    WHERE visitor_name  = “Nebraska”;
+
+SELECT * FROM football_games
+    WHERE visitor_score < home_score;
+
+
+SELECT visitor_name, game_date FROM football_games
+    WHERE MONTH(game_date) BETWEEN 9 AND 11;
+
+
+SELECT AVG(home_score) FROM football_games;
+
+SELECT COUNT(major) FROM football_players;
+
+SELECT COUNT(major) FROM football_players
+WHERE major = “CSCI”;
